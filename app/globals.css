@@ -4,7 +4,10 @@
 
 @import url("../styles/theme.css");
 
-body {
+html,
+body,
+:root {
+  height: 100%;
   font-family: "Inter", sans-serif;
 }
 
