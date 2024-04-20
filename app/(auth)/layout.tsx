@@ -1,7 +1,11 @@
-import React, { ReactElement } from "react";
+import React from "react";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
-  return <main className="flex-center min-h-screen w-full">{children}</main>;
+  return (
+    <div className="min-h-screen flex-center bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-500 to-blue-800">
+      {children}
+    </div>
+  );
 };
 
 export default Layout;
