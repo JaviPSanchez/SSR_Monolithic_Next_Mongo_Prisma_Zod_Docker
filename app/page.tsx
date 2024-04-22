@@ -1,7 +1,11 @@
 import { LoginButton } from "@/components/auth/login-button";
 import { Button } from "@/components/ui/button";
+import { db } from "@/lib/db";
 
-export default function Home() {
+export default async function Home() {
+  const user = await db.user.findMany();
+  console.log(user);
+
   return (
     <main className="min-h-screen flex-center bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-500 to-blue-800">
       <div className="space-y-6 text-center">
