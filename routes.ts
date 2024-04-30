@@ -13,7 +13,7 @@ export const publicRoutes = ["/"];
  * Auth required
  * @type {string[]}
  */
-export const authRoutes = ["/login", "/register"];
+export const authRoutes = ["/login", "/register", "/error"];
 
 /**
  *
