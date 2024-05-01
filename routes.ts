@@ -4,7 +4,7 @@
  * No Auth required
  * @type {string[]}
  */
-export const publicRoutes = ["/"];
+export const publicRoutes = ["/", "/new-verification"];
 // export const publicRoutes = ["/", "/home"];
 
 /**

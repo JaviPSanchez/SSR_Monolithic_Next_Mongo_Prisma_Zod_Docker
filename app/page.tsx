@@ -11,7 +11,7 @@ export default async function Home() {
         <h1 className="text-6xl  drop-shadow-sm font-semibold">😊 Auth</h1>
         <p className=" text-lg">A simple Authentication service</p>
         <div>
-          <LoginButton>
+          <LoginButton mode="modal" asChild>
             <Button size="lg" variant="custom">
               Sign In
             </Button>

@@ -43,16 +43,15 @@ export const {
     //   }
     // },
     async signIn({ user, account }) {
-      // Allow OAuth without email verification
-
+      // Allow OAuth without email verification (Github, Google)
       if (account?.provider !== "credentials") return true;
-
+      //We search for the user
       const existingUser = await getUserById(user.id);
 
       // Prevent sign in without email verification
       if (!existingUser?.emailVerified) return false;
 
-      // TODO add 2FA check
+      // TODO add 2FA check (Google and GitHub have their own 2FA)
 
       return true;
     },
