@@ -13,7 +13,7 @@ export const publicRoutes = ["/", "/new-verification"];
  * Auth required
  * @type {string[]}
  */
-export const authRoutes = ["/login", "/register", "/error"];
+export const authRoutes = ["/login", "/register", "/error", "/reset"];
 
 /**
  *
