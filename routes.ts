@@ -1,19 +1,24 @@
 /**
  *
- * Accesible routes for the public visitors
+ * Accesible routes for the public visitors, login and logout users
  * No Auth required
  * @type {string[]}
  */
 export const publicRoutes = ["/", "/new-verification"];
-// export const publicRoutes = ["/", "/home"];
 
 /**
  *
- * Accesible for authenticated users
+ * Accesible for authenticated users, logIn users
  * Auth required
  * @type {string[]}
  */
-export const authRoutes = ["/login", "/register", "/error", "/reset"];
+export const authRoutes = [
+  "/login",
+  "/register",
+  "/error",
+  "/reset",
+  "/new-password",
+];
 
 /**
  *

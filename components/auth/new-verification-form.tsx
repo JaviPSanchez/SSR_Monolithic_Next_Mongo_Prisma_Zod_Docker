@@ -4,7 +4,7 @@ import CardWrapper from "@/components/auth/card-wrapper";
 import { SyncLoader } from "react-spinners";
 import { useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
-import { newVerification } from "@/lib/actions/new-verification";
+import { newVerification } from "@/actions/new-verification";
 import { FormError } from "@/components/form-error";
 import { FormSuccess } from "@/components/form-success";
 
