@@ -2,9 +2,12 @@
 import type { Metadata } from "next";
 // Fonts
 import { Inter, Space_Grotesk } from "next/font/google";
+// Auth provider
 import { SessionProvider } from "next-auth/react";
 import { auth } from "@/auth";
+//Styles
 import "./globals.css";
+import { ThemeProvider } from "@/context/ThemeProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,7 +25,7 @@ export const metadata: Metadata = {
   description:
     "An amazing platform to automatize your projects with state-of-the-art dashboards",
   icons: {
-    icon: "./assets/images/site-logo.svg",
+    icon: "/assets/images/logo.svg",
   },
 };
 
@@ -36,7 +39,7 @@ export default async function RootLayout({
     <SessionProvider session={session}>
       <html lang="en">
         <body className={`${inter.variable} ${spaceGrotesk.variable}`}>
-          {children}
+          <ThemeProvider>{children}</ThemeProvider>
         </body>
       </html>
     </SessionProvider>
