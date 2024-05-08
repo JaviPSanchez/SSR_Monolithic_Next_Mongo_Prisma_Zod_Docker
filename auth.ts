@@ -24,6 +24,7 @@ export const {
   //If somethings goes wrong
   pages: {
     signIn: "/login",
+    signOut: "/",
     error: "/error",
   },
   // Trigger events when new user logins
@@ -36,13 +37,6 @@ export const {
     },
   },
   callbacks: {
-    //Verified email? if not, can´t signIn
-    // async signIn({ user }) {
-    //   const existingUser = await getUserById(user.id);
-    //   if (!existingUser || !existingUser.emailVerified) {
-    //     return false;
-    //   }
-    // },
     async signIn({ user, account }) {
       // Allow OAuth without email verification (Github, Google)
       if (account?.provider !== "credentials") return true;

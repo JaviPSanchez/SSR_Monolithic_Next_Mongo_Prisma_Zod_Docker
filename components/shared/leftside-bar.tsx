@@ -5,7 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "../ui/button";
-// import { SignedOut } from '@clerk/nextjs';
+import { LogoutButton } from "@/components/auth/logout-button";
+import { ExitIcon } from "@radix-ui/react-icons";
 
 const LeftSidebar = () => {
   const pathname = usePathname();
@@ -49,9 +50,8 @@ const LeftSidebar = () => {
         })}
       </div>
 
-      {/* <SignedOut> */}
       <div className="flex flex-col gap-3">
-        <Link href="/login">
+        {/* <Link href="/login">
           <Button className="small-medium btn-secondary min-h-[41px] w-full rounded-lg px-4 py-3 shadow-none">
             <Image
               src="/assets/icons/account.svg"
@@ -75,9 +75,15 @@ const LeftSidebar = () => {
             />
             <span className="max-xl:hidden">Sign up</span>
           </Button>
-        </Link>
+        </Link> */}
+
+        <LogoutButton>
+          <Button className="small-medium light-border-2 btn-tertiary text-dark400_light900 min-h-[41px] w-full rounded-lg border px-4 py-3 shadow-none">
+            <ExitIcon className="h-4 w-4 mr-2" />
+            <span className="max-xl:hidden">Log out</span>
+          </Button>
+        </LogoutButton>
       </div>
-      {/* </SignedOut> */}
     </section>
   );
 };

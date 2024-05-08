@@ -1,7 +1,7 @@
 "use client";
 
 import UserButton from "@/components/auth/user-button";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
@@ -29,36 +29,25 @@ const Navbar = () => {
         <Button asChild variant={pathname === "/admin" ? "default" : "outline"}>
           <Link href="/server">Admin</Link>
         </Button> */}
-        <Button asChild variant={pathname === "/home" ? "custom" : "outline"}>
-          <Link href="/home" className="flex items-center gap-1">
-            <Image
-              src="/assets/images/logo.png"
-              width={23}
-              height={23}
-              alt="DevFlow"
-            />
 
-            <p className="h2-bold font-spaceGrotesk text-dark-100 dark:text-light-900 max-sm:hidden">
-              Atalaya <span className="text-primary-500">Digital</span>
-            </p>
-          </Link>
-        </Button>
+        <Link href="/home" className="flex items-center gap-1">
+          <Image
+            src="/assets/images/logo.png"
+            width={23}
+            height={23}
+            alt="DevFlow"
+          />
+
+          <p className="h2-bold font-spaceGrotesk text-dark-100 dark:text-light-900 max-sm:hidden">
+            Atalaya <span className="text-primary-500">Digital</span>
+          </p>
+        </Link>
       </div>
       <GlobalSearch />
 
       <div className="flex-between gap-5">
         <Theme />
-        <UserButton
-          afterSignOutUrl="/"
-          appearance={{
-            elements: {
-              avatarBox: "h-10 w-10",
-            },
-            variables: {
-              colorPrimary: "#ff7000",
-            },
-          }}
-        />
+        <UserButton />
         <MobileNav />
       </div>
     </nav>
