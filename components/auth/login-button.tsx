@@ -16,7 +16,6 @@ export const LoginButton = ({
   asChild,
 }: LoginButtonProps) => {
   const router = useRouter();
-  console.log(router);
   const onClick = () => {
     router.push("/login");
   };

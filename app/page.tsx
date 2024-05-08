@@ -1,10 +1,7 @@
 import { LoginButton } from "@/components/auth/login-button";
 import { Button } from "@/components/ui/button";
-import { db } from "@/database/db";
 
 export default async function Home() {
-  // test@gmail.com Test1234@
-
   return (
     <main className="min-h-screen flex-center bg-slate-200">
       <div className="space-y-6 text-center bg-white p-6 text-black shadow-lg rounded-xl">
