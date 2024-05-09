@@ -1,15 +1,14 @@
 "use client";
 
-// import QuestionCard from "@/components/cards/QuestionCard";
 import HomeFilters from "@/components/home-filters";
 import Filter from "@/components/shared/filter";
-// import NoResult from "@/components/shared/NoResult";
 import LocalSearchbar from "@/components/shared/local-search-bar";
 import { Button } from "@/components/ui/button";
 import { HomePageFilters } from "@/constants/filters";
 import Link from "next/link";
-import { signOut, useSession } from "next-auth/react";
 import { useCurrentUser } from "@/hooks/user-current-user";
+import QuestionCard from "@/components/question-card";
+import NoResult from "@/components/shared/noresult";
 
 const questions = [
   {
@@ -81,7 +80,7 @@ export default function Home() {
 
       <HomeFilters />
 
-      {/* <div className="mt-10 flex w-full flex-col gap-6">
+      <div className="mt-10 flex w-full flex-col gap-6">
         {questions.length > 0 ? (
           questions.map((question) => (
             <QuestionCard
@@ -104,7 +103,7 @@ export default function Home() {
             linkTitle="Ask a Question"
           />
         )}
-      </div> */}
+      </div>
     </>
   );
 }
