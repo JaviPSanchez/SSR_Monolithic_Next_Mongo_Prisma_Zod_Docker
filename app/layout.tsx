@@ -1,10 +1,13 @@
 // Let TypeScript we work with Metadata
 import type { Metadata } from "next";
+
 // Fonts
 import { Inter, Space_Grotesk } from "next/font/google";
+
 // Auth provider
 import { SessionProvider } from "next-auth/react";
 import { auth } from "@/auth";
+
 //Styles
 import "./globals.css";
 import { ThemeProvider } from "@/context/ThemeProvider";

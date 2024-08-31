@@ -32,24 +32,28 @@ export const RegisterForm = () => {
     },
   });
 
+  console.log(error);
+
   const onSubmit = (values: z.infer<typeof RegisterSchema>) => {
     setError("");
     setSuccess("");
 
     startTransition(() => {
-      //Server Action
+      // Server Action
       register(values)
         .then((data) => {
-          setError(data.error);
-          setSuccess(data.success);
+          if (data.error) {
+            setError(data.error); // Set the error state
+          } else {
+            setSuccess(data.success); // Set the success state
+          }
           console.log(data);
         })
         .catch((error) => {
-          console.log("Error!");
+          setError("An unexpected error occurred. Please try again."); // Handle the error
+          console.error("Registration error:", error); // Log the error
         });
     });
-    // 2º Way:
-    // axios.post("your/endpoint", values).then()
   };
 
   return (

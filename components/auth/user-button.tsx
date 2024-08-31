@@ -29,7 +29,7 @@ const UserButton = () => {
         <LogoutButton>
           <DropdownMenuItem>
             <Button className="small-medium light-border-2 btn-tertiary text-dark400_light900 min-h-[41px] w-full rounded-lg border px-4 py-3 shadow-none">
-              <ExitIcon className="h-4 w-4 mr-2" />
+              <ExitIcon className="size-4 mr-2" />
               <span className="max-xl:hidden">Log out</span>
             </Button>
           </DropdownMenuItem>

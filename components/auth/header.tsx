@@ -19,7 +19,7 @@ const Header = ({ label }: HeaderProps) => {
         🔐 Auth
       </h1>
 
-      <p className="text-muted-foreground text-sm">{label}</p>
+      <p className=" text-sm">{label}</p>
     </div>
   );
 };

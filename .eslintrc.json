@@ -2,11 +2,16 @@
   "extends": [
     "standard",
     "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:tailwindcss/recommended",
     "prettier"
   ],
+  "plugins": ["@typescript-eslint", "tailwindcss"],
   "rules": {
-    "max-len": [2, 250],
+    "react/prop-types": "off",
+    "camelcase": "off",
+    "spaced-comment": "off",
+    "max-len": [2, 500],
     "no-multiple-empty-lines": [
       "error",
       {
@@ -14,6 +19,13 @@
         "maxEOF": 1
       }
     ],
-    "object-curly-newline": 0
+    "object-curly-newline": 0,
+    "react/react-in-jsx-scope": "off",
+    "tailwindcss/classnames-order": "off" // "warn" Adjust the severity level if needed
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }

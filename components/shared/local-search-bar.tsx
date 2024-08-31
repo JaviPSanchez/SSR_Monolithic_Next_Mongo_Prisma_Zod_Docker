@@ -5,7 +5,7 @@ import Image from "next/image";
 import React from "react";
 
 interface CustomInputProps {
-  route: string;
+  route?: string;
   iconPosition: string;
   imgSrc: string;
   placeholder: string;

@@ -49,6 +49,7 @@ const questions = [
 
 export default function Home() {
   const user = useCurrentUser();
+  console.log(user);
   return (
     <>
       <div className="flex w-full flex-col-reverse justify-between gap-4 sm:flex-row sm:items-center">
@@ -97,7 +98,7 @@ export default function Home() {
           ))
         ) : (
           <NoResult
-            title="There’s no question to show"
+            title="There`s no question to show"
             description="Be the first to break the silence! 🚀 Ask a Question and kickstart the discussion. our query could be the next big thing others learn from. Get involved! 💡"
             link="/ask-question"
             linkTitle="Ask a Question"
