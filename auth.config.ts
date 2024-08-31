@@ -1,14 +1,13 @@
-//To let Prisma work in the edge
+import NextAuth from "next-auth";
 import GitHub from "next-auth/providers/github";
 import Google from "next-auth/providers/google";
-import bcrypt from "bcryptjs";
+import bcrypt from "bcrypt-edge";
 import Credentials from "next-auth/providers/credentials";
 import { LoginSchema } from "@/schemas";
-
-import type { NextAuthConfig } from "next-auth";
 import { getUserByEmail } from "@/data/user";
 
-export default {
+const authConfig = {
+  secret: process.env.AUTH_SECRET,
   providers: [
     GitHub({
       clientId: process.env.GITHUB_CLIENT_ID,
@@ -27,7 +26,7 @@ export default {
           const user = await getUserByEmail(email);
           if (!user || !user.password) return null;
 
-          const passwordsMatch = await bcrypt.compare(password, user.password);
+          const passwordsMatch = bcrypt.compareSync(password, user.password);
 
           if (passwordsMatch) return user;
         }
@@ -35,4 +34,8 @@ export default {
       },
     }),
   ],
-} satisfies NextAuthConfig;
+  // Set AUTH_URL explicitly
+  url: process.env.AUTH_URL,
+};
+
+export default authConfig;

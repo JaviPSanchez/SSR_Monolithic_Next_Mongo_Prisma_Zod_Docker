@@ -1,3 +1,5 @@
+version: "3.8"
+
 services:
   frontend:
     build:
@@ -5,11 +7,13 @@ services:
       dockerfile: Dockerfile
       args:
         AUTH_SECRET: ${AUTH_SECRET}
+        NEXTAUTH_URL: ${AUTH_URL}
     ports:
       - "3000:3000"
     environment:
       - DATABASE_URL_MONGODB=${DATABASE_URL_MONGODB}
       - AUTH_SECRET=${AUTH_SECRET}
+      - AUTH_URL=${AUTH_URL}
       - GITHUB_CLIENT_ID=${GITHUB_CLIENT_ID}
       - GITHUB_CLIENT_SECRET=${GITHUB_CLIENT_SECRET}
       - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
@@ -19,4 +23,4 @@ services:
       - .:/app
       - /app/node_modules
     env_file:
-      - .env
+      - .env.production

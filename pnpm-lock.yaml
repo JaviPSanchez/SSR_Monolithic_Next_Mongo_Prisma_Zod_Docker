@@ -41,9 +41,9 @@ importers:
       '@radix-ui/react-slot':
         specifier: ^1.0.2
         version: 1.1.0(@types/react@18.3.5)(react@18.3.1)
-      bcryptjs:
-        specifier: ^2.4.3
-        version: 2.4.3
+      bcrypt-edge:
+        specifier: ^0.0.6
+        version: 0.0.6
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0
@@ -87,9 +87,6 @@ importers:
       '@tailwindcss/typography':
         specifier: ^0.5.12
         version: 0.5.15(tailwindcss@3.4.10)
-      '@types/bcryptjs':
-        specifier: ^2.4.6
-        version: 2.4.6
       '@types/node':
         specifier: ^20
         version: 20.16.2
@@ -737,9 +734,6 @@ packages:
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders || >=4.0.0-alpha.20'
 
-  '@types/bcryptjs@2.4.6':
-    resolution: {integrity: sha512-9xlo6R2qDs5uixm0bcIqCeMCE6HiQsIyel9KQySStiyqNl2tnj2mP3DX1Nf56MD6KMenNNlBBsy3LJ7gUEQPXQ==}
-
   '@types/cookie@0.6.0':
     resolution: {integrity: sha512-4Kh9a6B2bQciAhf7FSuMRRkUWecJgJu9nPnx3yzpsfXX/c50REIqpHY4C82bXP90qrLtXtkDxTZosYO3UpOwlA==}
 
@@ -958,8 +952,8 @@ packages:
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
 
-  bcryptjs@2.4.3:
-    resolution: {integrity: sha512-V/Hy/X9Vt7f3BbPJEi8BdVFMByHi+jNXrYkW3huaybV/kQ0KJg0Y6PkEMbn+zeT+i+SiKZ/HMqJGIIt4LZDqNQ==}
+  bcrypt-edge@0.0.6:
+    resolution: {integrity: sha512-lL5Y2V6RCwGvfY/6lIUGM8N1XfRwU0ncIr3dZO6d64KfaDQERcv/9TMWtUkiANxawg1BPvLlfjvanFOXmUIZwA==}
 
   binary-extensions@2.3.0:
     resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
@@ -3015,8 +3009,6 @@ snapshots:
       postcss-selector-parser: 6.0.10
       tailwindcss: 3.4.10
 
-  '@types/bcryptjs@2.4.6': {}
-
   '@types/cookie@0.6.0': {}
 
   '@types/json5@0.0.29': {}
@@ -3286,7 +3278,7 @@ snapshots:
 
   balanced-match@1.0.2: {}
 
-  bcryptjs@2.4.3: {}
+  bcrypt-edge@0.0.6: {}
 
   binary-extensions@2.3.0: {}
 

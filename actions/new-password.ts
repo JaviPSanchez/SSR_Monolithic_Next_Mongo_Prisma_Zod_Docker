@@ -4,7 +4,9 @@ import { getPasswordResetTokenByToken } from "@/data/password-reset-token";
 import { NewPasswordSchema } from "@/schemas";
 import * as z from "zod";
 import { getUserByEmail } from "@/data/user";
-import bcrypt from "bcryptjs";
+// import bcrypt from "bcryptjs";
+// import bcrypt from "bcrypt-edge";
+import bcrypt from "bcrypt-edge";
 import { db } from "@/database/db";
 
 export const newPassword = async (
@@ -41,7 +43,7 @@ export const newPassword = async (
     return { error: "Email does not exist" };
   }
 
-  const hashedPassword = await bcrypt.hash(password, 10);
+  const hashedPassword = bcrypt.hashSync(password, 10);
 
   await db.user.update({
     where: { id: existingUser.id },

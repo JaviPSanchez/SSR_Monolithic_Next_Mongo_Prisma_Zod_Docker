@@ -3,7 +3,8 @@
 // import { revalidatePath, revalidateTag } from "next/cache";
 import * as z from "zod";
 import { RegisterSchema } from "@/schemas";
-import bcrypt from "bcryptjs";
+// import bcrypt from "bcryptjs";
+import bcrypt from "bcrypt-edge";
 import { db } from "@/database/db";
 import { getUserByEmail } from "@/data/user";
 import { generateVerificationToken } from "@/lib/tokens";
@@ -20,7 +21,7 @@ export const register = async (values: z.infer<typeof RegisterSchema>) => {
 
   const { name, email, password } = validateFields.data;
   //Hash Password
-  const hashedPassword = await bcrypt.hash(password, 10);
+  const hashedPassword = bcrypt.hashSync(password, 10);
   // Check if email exist already
   const existingUser = await getUserByEmail(email);
   // Send error
