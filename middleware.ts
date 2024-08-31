@@ -19,24 +19,25 @@ export default auth((req) => {
   const isAuthRoute = authRoutes.includes(nextUrl.pathname);
 
   if (isApiAuthRoute) {
-    //Allow this, do nothing
-    return null;
+    // Allow this, do nothing
+    return; // Returning undefined (same as void)
   }
 
   if (isAuthRoute) {
     if (isLoggedIn) {
       return Response.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl));
     }
-    //Allow this, do nothing
-    return null;
+    // Allow this, do nothing
+    return; // Returning undefined (same as void)
   }
 
   if (!isLoggedIn && !isPublicRoute) {
     return Response.redirect(new URL("/login", nextUrl));
   }
-  //Allow this, do nothing
-  return null;
+  // Allow this, do nothing
+  return; // Returning undefined (same as void)
 });
+
 // Optionally, don't invoke Middleware on some paths
 // Read more: https://nextjs.org/docs/app/building-your-application/routing/middleware#matcher
 export const config = {

@@ -1,17 +1,19 @@
 {
   "extends": [
-    "standard",
+    "next",
+    "next/core-web-vitals",
+    "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:tailwindcss/recommended",
     "prettier"
   ],
-  "plugins": ["@typescript-eslint", "tailwindcss"],
+  "plugins": ["@typescript-eslint", "tailwindcss", "tailwindcss"],
   "rules": {
     "react/prop-types": "off",
     "camelcase": "off",
     "spaced-comment": "off",
-    "max-len": [2, 500],
+    "max-len": [2, 600],
     "no-multiple-empty-lines": [
       "error",
       {

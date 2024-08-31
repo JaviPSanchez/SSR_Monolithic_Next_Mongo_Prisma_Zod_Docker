@@ -5,7 +5,7 @@ import Image from "next/image";
 import React from "react";
 
 interface CustomInputProps {
-  route?: string;
+  route: string;
   iconPosition: string;
   imgSrc: string;
   placeholder: string;
@@ -19,6 +19,8 @@ const LocalSearchbar = ({
   placeholder,
   otherClasses,
 }: CustomInputProps) => {
+  console.log(route);
+
   return (
     <div
       className={`background-light800_darkgradient flex min-h-[56px] grow items-center gap-4 rounded-[10px] px-4 ${otherClasses}`}

@@ -19,6 +19,10 @@ export const newVerification = async (token: string) => {
 
   const existingUser = await getUserByEmail(existingToken.email);
 
+  if (!existingUser) {
+    return { error: "User not found!" };
+  }
+
   await db.user.update({
     where: { id: existingUser.id },
     data: {

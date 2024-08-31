@@ -3,6 +3,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        AUTH_SECRET: ${AUTH_SECRET}
     ports:
       - "3000:3000"
     environment:

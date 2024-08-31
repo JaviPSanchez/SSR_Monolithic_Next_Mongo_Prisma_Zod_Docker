@@ -1,5 +1,6 @@
 import NextAuth, { type DefaultSession } from "next-auth";
 import { PrismaAdapter } from "@auth/prisma-adapter";
+import type { Adapter } from "next-auth/adapters";
 // import GitHub from "next-auth/providers/github";
 import authConfig from "@/auth.config";
 import { db } from "@/database/db";
@@ -40,6 +41,13 @@ export const {
     async signIn({ user, account }) {
       // Allow OAuth without email verification (Github, Google)
       if (account?.provider !== "credentials") return true;
+
+      // Check if user.id exists and is a string
+      if (!user.id) {
+        console.error("User ID is missing or undefined.");
+        return false;
+      }
+
       //We search for the user
       const existingUser = await getUserById(user.id);
 
@@ -87,8 +95,12 @@ export const {
       return token;
     },
   },
-  adapter: PrismaAdapter(db),
+  // Integrate PrismaAdapter
+  adapter: PrismaAdapter(db) as Adapter,
+  // Session strategy
   session: { strategy: "jwt" },
+
+  // Other authentication configurations
   ...authConfig,
   // providers: [GitHub],
 });
