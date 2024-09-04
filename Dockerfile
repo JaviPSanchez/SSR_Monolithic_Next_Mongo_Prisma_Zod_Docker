@@ -1,7 +1,6 @@
 # Stage 1: Install dependencies and build the application
 ARG NODE_VERSION=20.12.2
 ARG PNPM_VERSION=9.0.1
-ARG AUTH_SECRET
 
 FROM node:${NODE_VERSION}-alpine AS builder
 
@@ -15,11 +14,10 @@ WORKDIR /app
 COPY package*.json ./
 COPY pnpm-lock.yaml* ./
 
-# Set environment variables
+# Set environment variables (only necessary ones)
 ARG AUTH_SECRET
 ENV AUTH_SECRET=${AUTH_SECRET}
 
-# Set AUTH_URL for the Docker build environment
 ARG AUTH_URL
 ENV AUTH_URL=${AUTH_URL}
 

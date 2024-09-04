@@ -1,4 +1,3 @@
-import NextAuth from "next-auth";
 import GitHub from "next-auth/providers/github";
 import Google from "next-auth/providers/google";
 import bcrypt from "bcrypt-edge";
@@ -34,8 +33,6 @@ const authConfig = {
       },
     }),
   ],
-  // Set AUTH_URL explicitly
-  url: process.env.AUTH_URL,
 };
 
 export default authConfig;
